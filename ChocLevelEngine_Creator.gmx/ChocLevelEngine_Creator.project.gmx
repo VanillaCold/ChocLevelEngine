@@ -42,11 +42,16 @@
   <scripts name="scripts">
     <script>scripts\save_lvl.gml</script>
     <script>scripts\load_lvl.gml</script>
+    <script>scripts\export_lvl.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fon_default</font>
   </fonts>
   <objects name="objects">
+    <objects name="Decals">
+      <object>objects\obj_bgdecal</object>
+      <object>objects\obj_fgdecal</object>
+    </objects>
     <objects name="Object">
       <object>objects\obj_gameobject</object>
     </objects>
