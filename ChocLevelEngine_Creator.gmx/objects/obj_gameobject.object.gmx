@@ -58,7 +58,18 @@ alarm[0] = 1
         {
         texture = "obj_null"
         }
+        
     }
+  
+    
+for(var i = 0;i&lt;global.spritenum;i++)   
+if global.file_array[i] = texture or global.file_array[i] = texture+string(".png")
+    {
+    sprite_index = global.sprites_array[i]
+    break;
+    }
+else sprite_index = spr_object
+
 </string>
           </argument>
         </arguments>
@@ -264,6 +275,13 @@ alarm[0] = 1
             <string>if mtoggle
     {
     texture = get_string("Object name",texture);
+    for(var i = 0;i&lt;global.spritenum;i++)   
+    if global.file_array[i] = texture or global.file_array[i] = texture+string(".png")
+        {
+        sprite_index = global.sprites_array[i]
+        break;
+        }
+    else sprite_index = spr_object
     }
 </string>
           </argument>

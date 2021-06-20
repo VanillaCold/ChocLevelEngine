@@ -10,7 +10,41 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>file = file_find_first("Sprites\*.png",0);
+for(var j = 0;file!="";j++)
+    {
+    file = file_find_next()
+    }
+    
+global.sprites_array = array_create(j)
+global.file_array = array_create(j)
+global.spritenum = j
+
+
+file = file_find_first("Sprites\*.png",0); 
+for(var i = 0;file != "";i++)
+    {
+    show_debug_message(file)
+    spr = sprite_add("Sprites\"+string(file),1,0,0,0,0)
+    width = sprite_get_width(spr)
+    height = sprite_get_height(spr)
+    sprite_delete(spr)
+    spr2 = sprite_add("Sprites\"+string(file),1,0,0,width/2,height/2)
+    
+    
+    show_debug_message(spr2)
+    
+    if sprite_exists(spr2)
+    {
+    global.sprites_array[i] = spr2
+    global.file_array[i] = file
+    sprite_collision_mask(spr2,0,1,0,0,width,height,1,0)
+    
+    }
+    else game_end()
+    
+    file = file_find_next()
+    }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
