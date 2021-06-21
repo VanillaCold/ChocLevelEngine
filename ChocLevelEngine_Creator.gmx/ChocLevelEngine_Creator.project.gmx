@@ -27,6 +27,7 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_overlay</sprite>
     <sprite>sprites\spr_object</sprite>
     <sprite>sprites\spr_object_pal</sprite>
     <sprite>sprites\spr_terrainpoint</sprite>
@@ -37,6 +38,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\bg_grid</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

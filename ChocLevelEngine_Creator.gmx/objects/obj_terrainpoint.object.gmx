@@ -54,8 +54,27 @@ moving=0
             <kind>1</kind>
             <string>if moving = 1
     {
-    x=min(max(0,mouse_x),room_width);
-    y=min(max(0,mouse_y),room_height);
+    x=mouse_x;
+    y=mouse_y;
+    
+    if global.gridmode = 1
+        {
+        x = (round(mouse_x/16))*16;
+        y = (round(mouse_y/16))*16;
+        }
+    
+    if global.snapmode = 1
+        {
+        if instance_exists(collision_point(x,y,object_index,1,1))
+            {
+            var inst = collision_point(x,y,object_index,1,1)
+            x = inst.x
+            y = inst.y
+            }
+        }
+     
+    x=min(max(0,x),room_width);
+    y=min(max(0,y),room_height);   
     }
 </string>
           </argument>

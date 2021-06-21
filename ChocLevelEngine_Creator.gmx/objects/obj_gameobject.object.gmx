@@ -97,8 +97,15 @@ else sprite_index = spr_object
     x += (mouse_x-x)/4
     y += (mouse_y-y)/4
     
+    if global.gridmode = 1
+        {
+        x = (round(mouse_x/16))*16;
+        y = (round(mouse_y/16))*16;
+        }
+    
     x=min(max(0,x),room_width);
     y=min(max(0,y),room_height);
+    
     }
 </string>
           </argument>

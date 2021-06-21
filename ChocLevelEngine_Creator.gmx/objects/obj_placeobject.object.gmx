@@ -134,7 +134,11 @@ mtoggle = 0
         //y = obj_uisidebar.y+yspawn
         if obj_uisidebar.extend = 1 &amp;&amp; 
         obj_uisidebar.offset != -256
-        or mouse_check_button(mb_middle){x = obj_uisidebar.x+xspawn}
+        or mouse_check_button(mb_middle)
+            {
+            x = obj_uisidebar.x+xspawn
+            y = obj_uisidebar.y+yspawn
+            }
         }
     else if mtoggle
         {

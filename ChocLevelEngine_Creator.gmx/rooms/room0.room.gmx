@@ -10,7 +10,10 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>file = file_find_first("Sprites\*.png",0);
+  <code>global.snapmode = 0;
+global.gridmode = 0;
+
+var file = file_find_first("Sprites\*.png",0);
 for(var j = 0;file!="";j++)
     {
     file = file_find_next()

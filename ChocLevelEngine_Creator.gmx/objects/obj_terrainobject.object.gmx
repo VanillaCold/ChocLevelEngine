@@ -123,12 +123,31 @@ if variable_instance_exists(self,"points")
     if points[0] != noone 
         {
         
+        //failsafe!
+        /*if (points[0].x = points[1].x &amp;&amp; points[1].x = points[2].x &amp;&amp; points[2].x = points[3].x)
+            {
+            points[0].x += 25;
+            points[1].x -= 25;
+            points[2].x += 25;
+            points[3].x -= 25;
+            }
+            
+        if (points[0].y = points[1].y &amp;&amp; points[1].y = points[2].y &amp;&amp; points[2].y = points[3].y)
+            {
+            points[0].y -= 25;
+            points[1].y -= 25;
+            //points[2].y += 25;
+            //points[3].y += 25;
+            }*/
+        
+        
         x = (points[0].x +points[1].x + points[2].x +points[3].x) / 4
         y = (points[0].y +points[1].y + points[2].y +points[3].y) / 4
         if point_in_triangle(mouse_x,mouse_y,points[0].x,points[0].y,points[1].x,points[1].y,points[2].x,points[2].y)
         or point_in_triangle(mouse_x,mouse_y,points[3].x,points[3].y,points[2].x,points[2].y,points[1].x,points[1].y)
         &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_gameobject)
         &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_uisidebar)
+        &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_terrainpoint)
         {   
             if mouse_check_button_pressed (mb_left) mtoggle = 1
             if mouse_check_button_released(mb_left) or place_meeting(mouse_x,mouse_y,obj_uisidebar) mtoggle = 0
@@ -142,16 +161,25 @@ if variable_instance_exists(self,"points")
             if mouse_check_button(mb_left) &amp;&amp; points[0].moving = 0 &amp;&amp; points[1].moving = 0 
             &amp;&amp; points[2].moving = 0 &amp;&amp; points[3].moving = 0
                 {
-                    
-                x += (mouse_x-x)/2
-                y += (mouse_y-y)/2
+                xmult = (mouse_x-x)/3;
+                ymult = (mouse_y-y)/3;
+                if global.gridmode = 1 
+                    {
+                    xmult = round((mouse_x-x)/16)*16;
+                    ymult = round((mouse_y-y)/16)*16;
+                    }
+                
+                   
+                
+                x += xmult
+                y += ymult
                     
                 for(var i=0;i&lt;4;i++)
                     {
                     with(points[i])
                         {
-                        x += (mouse_x-origin.x)/2
-                        y += (mouse_y-origin.y)/2
+                        x += origin.xmult
+                        y += origin.ymult
                         
                         }
                     }
