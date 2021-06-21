@@ -4,11 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <datafiles number="1" name="datafiles">
-    <datafiles number="1" name="Sprites">
+    <datafiles number="1" name="levels">
       <datafile>
-        <name>obj_spiker.png</name>
+        <name>level.chlvl</name>
         <exists>-1</exists>
-        <size>983</size>
+        <size>13428</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -20,55 +20,26 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>obj_spiker.png</filename>
+        <filename>level.chlvl</filename>
       </datafile>
     </datafiles>
   </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_overlay</sprite>
-    <sprite>sprites\spr_object</sprite>
-    <sprite>sprites\spr_object_pal</sprite>
-    <sprite>sprites\spr_terrainpoint</sprite>
     <sprite>sprites\spr_templatetexture</sprite>
-    <sprite>sprites\spr_terrain_object</sprite>
-    <sprite>sprites\spr_terrain_pal</sprite>
-    <sprite>sprites\spr_uisidebar</sprite>
   </sprites>
-  <backgrounds name="background">
-    <background>background\background0</background>
-    <background>background\bg_grid</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\save_lvl.gml</script>
     <script>scripts\load_lvl.gml</script>
-    <script>scripts\export_lvl.gml</script>
-    <script>scripts\setup_sprites.gml</script>
   </scripts>
-  <fonts name="fonts">
-    <font>fonts\fon_default</font>
-  </fonts>
   <objects name="objects">
-    <objects name="Decals">
-      <object>objects\obj_bgdecal</object>
-      <object>objects\obj_fgdecal</object>
-    </objects>
-    <objects name="Object">
-      <object>objects\obj_gameobject</object>
-    </objects>
-    <objects name="terrain">
+    <objects name="importing level data">
       <object>objects\obj_terrainobject</object>
       <object>objects\obj_terrainpoint</object>
+      <object>objects\obj_import</object>
     </objects>
-    <objects name="UI">
-      <object>objects\obj_placeterrain</object>
-      <object>objects\obj_uisidebar</object>
-      <object>objects\obj_placeobject</object>
-    </objects>
-    <object>objects\obj_levelentry</object>
-    <object>objects\obj_control</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
