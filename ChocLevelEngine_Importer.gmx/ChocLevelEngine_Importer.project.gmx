@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
-    <datafiles number="1" name="levels">
+  <datafiles number="2" name="datafiles">
+    <datafiles number="2" name="levels">
       <datafile>
         <name>level.chlvl</name>
         <exists>-1</exists>
@@ -28,6 +28,10 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_templatetexture</sprite>
+    <sprites name="placeholder sprites">
+      <sprite>sprites\spr_goal</sprite>
+      <sprite>sprites\spr_placeholder</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -39,6 +43,11 @@
       <object>objects\obj_terrainobject</object>
       <object>objects\obj_terrainpoint</object>
       <object>objects\obj_import</object>
+      <object>objects\obj_gameobject</object>
+    </objects>
+    <objects name="placeholder objects">
+      <object>objects\obj_goal</object>
+      <object>objects\obj_player</object>
     </objects>
   </objects>
   <rooms name="rooms">

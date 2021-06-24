@@ -46,10 +46,11 @@ for(var j = 0;file!="";j++)
     {
     file = file_find_next()
     }
+show_debug_message(j)
     
 global.terrain_array = array_create(j)
 global.terrain_names = array_create(j)
-global.spritenum = j
+global.terrainnum = j
 
 
 file = file_find_first("Terrain\*.png",0); 

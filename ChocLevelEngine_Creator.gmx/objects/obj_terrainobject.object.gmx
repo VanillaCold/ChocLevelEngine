@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>alarm[0] = 3
 texture = sprite_get_name(spr_templatetexture)
+texid = spr_templatetexture
 mtoggle = 0
 </string>
           </argument>
@@ -148,15 +149,29 @@ if variable_instance_exists(self,"points")
         &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_gameobject)
         &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_uisidebar)
         &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_terrainpoint)
-        {   
+            {   
             if mouse_check_button_pressed (mb_left) mtoggle = 1
             if mouse_check_button_released(mb_left) or place_meeting(mouse_x,mouse_y,obj_uisidebar) mtoggle = 0
             if mouse_check_button_released(mb_right){instance_destroy()}
-        }
+            if keyboard_check_released(vk_shift)
+                {
+                texture = get_string("Terrain texture:","")
+                for(var i = 0;i&lt;global.terrainnum;i++)   
+                if global.terrain_names[i] = texture or global.terrain_names[i] = texture+string(".png")
+                    {
+                    texid = global.terrain_array[i]
+                    break;
+                    }
+                else if i = global.terrainnum
+                    {
+                    texid = spr_templatetexture
+                    texture = "spr_templatexture"
+                    }
+                }
+            }
         if mouse_check_button_released(mb_left)mtoggle = 0
         if mtoggle
             {
-            
                 
             if mouse_check_button(mb_left) &amp;&amp; points[0].moving = 0 &amp;&amp; points[1].moving = 0 
             &amp;&amp; points[2].moving = 0 &amp;&amp; points[3].moving = 0
@@ -210,7 +225,13 @@ if variable_instance_exists(self,"points")
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if variable_instance_exists(self,"points")
+            <string>if !sprite_exists(texid)
+    {
+    texture = "spr_templatetexture"
+    texid = spr_templatetexture
+    }
+
+if variable_instance_exists(self,"points")
     {
     if points[0] != noone &amp;&amp; points[1] != noone
     &amp;&amp; points[2] != noone &amp;&amp; points[3] != noone
@@ -228,7 +249,7 @@ if variable_instance_exists(self,"points")
 
     
     //draw_triangle(points[0].x,points[0].y,points[1].x,points[1].y,points[2].x,points[2].y,0)
-    var tex = sprite_get_texture(spr_templatetexture,0)
+    var tex = sprite_get_texture(texid,0)
     draw_primitive_begin_texture(pr_trianglestrip,tex);
     
     if !variable_instance_exists(points[0],"height")

@@ -24,7 +24,7 @@ if ds_grid_width(grid) > 1 for(var i=0; i<ds_grid_height(grid); i=i+1)
     {
     if ds_grid_get(grid,0,i) = "obj_terrainobject" or ds_grid_get(grid,0,i) = "obj_terrainpoint" //if the object isn't available to be imported yet, don't import said object.
     otype = asset_get_index(ds_grid_get(grid,0,i))
-    else otype = noone
+    else otype = ds_grid_get(grid,0,i)
     xpos = ds_grid_get(grid,1,i) //set variables
     ypos = ds_grid_get(grid,2,i)
     rot = ds_grid_get(grid,3,i)
@@ -42,7 +42,7 @@ if ds_grid_width(grid) > 1 for(var i=0; i<ds_grid_height(grid); i=i+1)
         origin = ds_grid_get(grid,8,i)
         }
     
-    if otype != noone
+    if otype != ds_grid_get(grid,0,i)
     {
     ID = instance_create(xpos,ypos,otype) //create object and set variables
     ID.image_angle = rot
@@ -71,13 +71,15 @@ if ds_grid_width(grid) > 1 for(var i=0; i<ds_grid_height(grid); i=i+1)
             prevTerrain.points[i-prevTerrainValue-1] = ID
             }
         }
-        
-    if otype = "obj_gameobject" //game objects aren't supported yet but when they are, this will set a variable for them
+    
+    }
+        if otype = "obj_gameobject" //game objects aren't supported yet but when they are, this will set a variable for them
         {
         tex = ds_grid_get(grid,9,i)
-        ID.texture = tex;
+        show_debug_message(tex);
+        if object_exists(asset_get_index(tex))
+        instance_create(xpos,ypos,asset_get_index(tex));
         }
-    }
     }
     if ds_grid_width(grid) >10 //set room size
         {
