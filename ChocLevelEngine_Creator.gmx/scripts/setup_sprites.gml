@@ -57,11 +57,11 @@ file = file_find_first("Terrain\*.png",0);
 for(var i = 0;file != "";i++)
     {
     show_debug_message(file)
-    spr = sprite_add("Terrain\"+string(file),1,0,0,0,0)
+    spr = sprite_add("Terrain\"+string(file),2,0,0,0,0)
     width = sprite_get_width(spr)
     height = sprite_get_height(spr)
     sprite_delete(spr)
-    spr2 = sprite_add("Terrain\"+string(file),1,0,0,width/2,height/2)
+    spr2 = sprite_add("Terrain\"+string(file),2,0,0,width/2,height/2)
     
     
     show_debug_message(spr2)
