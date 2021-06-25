@@ -54,6 +54,11 @@ moving=0
             <kind>1</kind>
             <string>if moving = 1
     {
+    if !mouse_check_button(mb_left)
+        {
+        moving = 0; exit;
+        }
+    
     x=mouse_x;
     y=mouse_y;
     

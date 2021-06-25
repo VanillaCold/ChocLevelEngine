@@ -144,11 +144,11 @@ if variable_instance_exists(self,"points")
         
         x = (points[0].x +points[1].x + points[2].x +points[3].x) / 4
         y = (points[0].y +points[1].y + points[2].y +points[3].y) / 4
-        if point_in_triangle(mouse_x,mouse_y,points[0].x,points[0].y,points[1].x,points[1].y,points[2].x,points[2].y)
-        or point_in_triangle(mouse_x,mouse_y,points[3].x,points[3].y,points[2].x,points[2].y,points[1].x,points[1].y)
+        if (point_in_triangle(mouse_x,mouse_y,points[0].x,points[0].y,points[1].x,points[1].y,points[2].x,points[2].y)
+        or point_in_triangle(mouse_x,mouse_y,points[3].x,points[3].y,points[2].x,points[2].y,points[1].x,points[1].y))
         &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_gameobject)
         &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_uisidebar)
-        &amp;&amp; !place_meeting(mouse_x,mouse_y,obj_terrainpoint)
+        //&amp;&amp; !place_meeting(mouse_x,mouse_y,obj_terrainpoint)
             {   
             if mouse_check_button_pressed (mb_left) mtoggle = 1
             if mouse_check_button_released(mb_left) or place_meeting(mouse_x,mouse_y,obj_uisidebar) mtoggle = 0
