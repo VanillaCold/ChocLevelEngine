@@ -7,6 +7,8 @@ Instead of manually tiling a level's terrain, this tool has Terrain Objects:
 + These consist of four points with which a quadrilateral gets drawn.
 + Said points can easily be moved just by left-clicking them.
 + Pressing the Shift key while the mouse is hovering over a terrain object will let you change its texture.
++ Pressing the 1 key will toggle a 16x16 grid - when enabled, all terrain points and objects will snap to this grid when moved.
++ Pressing the 0 key will toggle "Snap Mode" - when enabled, terrain points will snap to each other when moved, if they're close enough.
 
 In addition to this, you can also place objects using this tool as well.  
 Why? Simple: since the GameMaker: Studio room editor can't read the level's terrain, it'd be difficult to place objects into your level.
