@@ -163,7 +163,7 @@ if variable_instance_exists(self,"points")
                     texid = global.terrain_array[i]
                     break;
                     }
-                else if texid = spr_templatetexture
+                else if texid = spr_templatetexture &amp;&amp; i = global.terrainnum
                     {
                     texid = spr_templatetexture
                     texture = "spr_templatexture"

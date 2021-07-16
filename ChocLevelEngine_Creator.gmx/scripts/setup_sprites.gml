@@ -77,4 +77,5 @@ for(var i = 0;file != "";i++)
     Terrain textures could not be registered properly.",1)
     
     file = file_find_next()
+    show_debug_message(i)
     }
