@@ -278,9 +278,15 @@ if variable_instance_exists(self,"points")
         //
         var minx1 = max(points[0].x,points[1].x,points[2].x)
         var miny1 = max(points[0].y,points[1].y,points[2].y)
-        draw_vertex_texture(points[0].x,points[0].y,points[0].width*((points[0].x-minx1)/sprite_get_width(texid)),points[0].height*((points[0].y-miny1)/sprite_get_height(texid)));
-        draw_vertex_texture(points[1].x,points[1].y,points[1].width*((points[1].x-minx1)/sprite_get_width(texid)),points[1].height*((points[1].y-miny1)/sprite_get_height(texid)));
-        draw_vertex_texture(points[2].x,points[2].y,points[2].width*((points[2].x-minx1)/sprite_get_width(texid)),points[2].height*((points[2].y-miny1)/sprite_get_height(texid)));
+        
+        //draw_vertex_texture(points[0].x,points[0].y,points[0].width*((points[0].x-minx1)/sprite_get_width(texid)),points[0].height*((points[0].y-miny1)/sprite_get_height(texid)));
+        //draw_vertex_texture(points[1].x,points[1].y,points[1].width*((points[1].x-minx1)/sprite_get_width(texid)),points[1].height*((points[1].y-miny1)/sprite_get_height(texid)));
+        //draw_vertex_texture(points[2].x,points[2].y,points[2].width*((points[2].x-minx1)/sprite_get_width(texid)),points[2].height*((points[2].y-miny1)/sprite_get_height(texid)));
+        
+        draw_vertex_texture(points[0].x,points[0].y,points[0].x/sprite_get_width(texid)-minx,points[0].y/sprite_get_height(texid)-miny);
+        draw_vertex_texture(points[1].x,points[1].y,points[1].x/sprite_get_width(texid)-minx,points[1].y/sprite_get_height(texid)-miny);
+        draw_vertex_texture(points[2].x,points[2].y,points[2].x/sprite_get_width(texid)-minx,points[2].y/sprite_get_height(texid)-miny);
+        
         //}
         
         draw_primitive_end()
@@ -289,9 +295,13 @@ if variable_instance_exists(self,"points")
         draw_primitive_begin_texture(pr_trianglestrip,tex);
         var minx2 = min(points[3].x,points[1].x,points[2].x)
         var miny2 = min(points[3].y,points[1].y,points[2].y)
-        draw_vertex_texture(points[3].x,points[3].y,points[3].width*((points[3].x-minx2)/sprite_get_width(texid)),points[3].height*((points[3].y-miny2)/sprite_get_height(texid)));
-        draw_vertex_texture(points[1].x,points[1].y,points[1].width*((points[1].x-minx2)/sprite_get_width(texid)),points[1].height*((points[1].y-miny2)/sprite_get_height(texid)));
-        draw_vertex_texture(points[2].x,points[2].y,points[2].width*((points[2].x-minx2)/sprite_get_width(texid)),points[2].height*((points[2].y-miny2)/sprite_get_height(texid)));
+        //draw_vertex_texture(points[3].x,points[3].y,points[3].width*((points[3].x-minx2)/sprite_get_width(texid)),points[3].height*((points[3].y-miny2)/sprite_get_height(texid)));
+        //draw_vertex_texture(points[1].x,points[1].y,points[1].width*((points[1].x-minx2)/sprite_get_width(texid)),points[1].height*((points[1].y-miny2)/sprite_get_height(texid)));
+        //draw_vertex_texture(points[2].x,points[2].y,points[2].width*((points[2].x-minx2)/sprite_get_width(texid)),points[2].height*((points[2].y-miny2)/sprite_get_height(texid)));
+        
+        draw_vertex_texture(points[3].x,points[3].y,points[3].x/sprite_get_width(texid)-minx,points[3].y/sprite_get_height(texid)-miny);
+        draw_vertex_texture(points[1].x,points[1].y,points[1].x/sprite_get_width(texid)-minx,points[1].y/sprite_get_height(texid)-miny);
+        draw_vertex_texture(points[2].x,points[2].y,points[2].x/sprite_get_width(texid)-minx,points[2].y/sprite_get_height(texid)-miny);
         
     draw_primitive_end()
     
