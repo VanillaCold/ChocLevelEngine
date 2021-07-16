@@ -104,6 +104,8 @@ moving=0
           <argument>
             <kind>1</kind>
             <string>moving = 0
+x = round(x)
+y = round(y)
 </string>
           </argument>
         </arguments>
