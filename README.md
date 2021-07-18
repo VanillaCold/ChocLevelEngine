@@ -22,3 +22,9 @@ In the future, there will also be Decals - they will do nothing but can be used 
 The ability to use custom textures for terrain and objects wouldn't work without a way to import them.  
 That's why the Choc Level Editor has support for both of these - simply place your texture in `ChocLevelEngine_Creator\Sprites` or `ChocLevelEngine_Creator\Terrain` and the level editor will do the rest.  
 When using custom textures in your own game, terrain objects looks for a sprite with the same name as your texture and regular objects just use the sprite that you defined in GameMaker: Studio.
+
+**Misc Controls**
++ Pressing the Space key will let you resize the room.
++ Right-click will remove objects
++ Middle-click will move the camera around the room
++ S will save the level, L will load the level.
