@@ -5,8 +5,8 @@ var num
 num = instance_number(obj_levelentry) //number of objects, terrain objects, etc
 
 var grid
-grid = ds_grid_create(12, num) //create data-structure grid to hold object data
-var ID, otype, xpos, ypos, rot, blend, alpha, xscale, yscale, tex, origin, points, rw, rh;
+grid = ds_grid_create(13, num) //create data-structure grid to hold object data
+var ID, otype, xpos, ypos, rot, blend, alpha, xscale, yscale, tex, origin, points, rw, rh, oLayer;
 points = noone;
 
 for(var i=0; i<num; i=i+1)
@@ -20,6 +20,8 @@ for(var i=0; i<num; i=i+1)
     alpha = ID.image_alpha
     xscale = ID.image_xscale
     yscale = ID.image_yscale
+    oLayer = ID.layer
+    
     tex = sprite_get_name(ID.sprite_index) //get sprite name
     if otype = object_get_name(obj_terrainobject) or ID.object_index = obj_placeobject tex = ID.texture //if object is actually an 
     if otype = object_get_name(obj_terrainobject) points = ID.points //terrain objects are complicated.
@@ -38,6 +40,7 @@ for(var i=0; i<num; i=i+1)
     ds_grid_set(grid,8,i,origin)
     else ds_grid_set(grid,8,i,noone)
     if ID.object_index = obj_gameobject{ds_grid_set(grid,9,i,ID.texture);}
+    ds_grid_set(grid,12,i,oLayer)
 }
 rw = room_width //set the room height and width
 rh = room_height

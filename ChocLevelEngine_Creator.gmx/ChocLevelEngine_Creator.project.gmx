@@ -84,6 +84,7 @@
       <object>objects\obj_terrainpoint</object>
     </objects>
     <objects name="UI">
+      <object>objects\obj_layerswitch</object>
       <object>objects\obj_placeterrain</object>
       <object>objects\obj_uisidebar</object>
       <object>objects\obj_placeobject</object>

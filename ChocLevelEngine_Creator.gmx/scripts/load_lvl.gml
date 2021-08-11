@@ -7,7 +7,7 @@ var level_encoded = file_text_read_string(file)
 var level_data = base64_decode(level_encoded)
 file_text_close(file)
 ID = noone
-var otype, xpos, ypos, rot, blend, alpha, xscale, yscale, tex, origin, points, prevTerrain;
+var otype, xpos, ypos, rot, blend, alpha, xscale, yscale, tex, origin, points, prevTerrain, oLayer;
 tex = noone
 points = noone
 origin = noone
@@ -40,16 +40,40 @@ if ds_grid_width(grid) > 1 for(var i=0; i<ds_grid_height(grid); i=i+1)
         origin = ds_grid_get(grid,8,i)
         }
     
+    if ds_grid_width(grid) > 12
+        {
+        oLayer = ds_grid_get(grid,12,i)
+        }
+    else oLayer = 0
+        
     ID = instance_create(xpos,ypos,otype)
     ID.image_angle = rot
     ID.image_blend = blend
     ID.image_alpha = alpha
     ID.image_xscale = xscale
     ID.image_yscale = yscale
+    ID.layer = oLayer
     show_debug_message("I = "+string(i))
     if otype = obj_terrainobject
         {
         ID.texture = tex
+        ID.texid = asset_get_index(tex);
+        if asset_get_index(tex) == -1
+            {
+            ID.texid = spr_templatetexture
+            for(var ji = 0;ji<global.terrainnum;ji++)   
+                if global.terrain_names[ji] = tex or global.terrain_names[ji] = tex+string(".png")
+                    {
+                    ID.texid = global.terrain_array[ji]
+                    break;
+                    }
+                else if ID.texid = spr_templatetexture && ji = global.terrainnum
+                    {
+                    ID.texid = spr_templatetexture
+                    ID.texture = "spr_templatexture"
+                    }
+            }
+        
         ID.points = array_create(4)
         for(var ii=0;ii<4;ii++)ID.points[ii] = noone
         prevTerrain = ID

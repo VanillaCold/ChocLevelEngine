@@ -7,7 +7,7 @@ var level_encoded = file_text_read_string(file)
 var level_data = base64_decode(level_encoded)
 file_text_close(file)
 ID = noone
-var otype, xpos, ypos, rot, blend, alpha, xscale, yscale, tex, origin, points, prevTerrain;
+var otype, xpos, ypos, rot, blend, alpha, xscale, yscale, tex, origin, points, prevTerrain, oLayer;
 tex = noone
 points = noone
 origin = noone
@@ -42,6 +42,12 @@ if ds_grid_width(grid) > 1 for(var i=0; i<ds_grid_height(grid); i=i+1)
         origin = ds_grid_get(grid,8,i)
         }
     
+    if ds_grid_width(grid) > 12
+        {
+        oLayer = ds_grid_get(grid,12,i)
+        }
+    else oLayer = 0    
+        
     if otype != ds_grid_get(grid,0,i)
     {
     ID = instance_create(xpos,ypos,otype) //create object and set variables
@@ -50,6 +56,8 @@ if ds_grid_width(grid) > 1 for(var i=0; i<ds_grid_height(grid); i=i+1)
     ID.image_alpha = alpha
     ID.image_xscale = xscale
     ID.image_yscale = yscale
+    ID.depth = -oLayer
+    ID.layer = oLayer
     show_debug_message("I = "+string(i))
     if otype = obj_terrainobject
         {
