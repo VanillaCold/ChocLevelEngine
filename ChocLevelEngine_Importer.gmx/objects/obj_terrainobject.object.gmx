@@ -54,7 +54,7 @@ sprite_new = noone;
           <argument>
             <kind>1</kind>
             <string>///stop potentially huge memory leak
-if sprite_new != noone sprite_delete(sprite_new)
+if sprite_new != noone and sprite_exists(sprite_new) sprite_delete(sprite_new)
 </string>
           </argument>
         </arguments>

@@ -15,7 +15,8 @@ global.gridmode = 0;
 global.currentlayer = 0;
 
 setup_sprites()
-setup_terrainsprites()</code>
+setup_terrainsprites()
+setup_decals()</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -60,7 +61,8 @@ setup_terrainsprites()</code>
     <instance objName="obj_uisidebar" x="0" y="0" name="inst_7CBEDD87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_placeobject" x="64" y="80" name="inst_1F9838AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_placeterrain" x="64" y="176" name="inst_A7A0FFDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_layerswitch" x="64" y="288" name="inst_32E16C36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_layerswitch" x="64" y="320" name="inst_32E16C36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_placedecal" x="64" y="272" name="inst_A5421C77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

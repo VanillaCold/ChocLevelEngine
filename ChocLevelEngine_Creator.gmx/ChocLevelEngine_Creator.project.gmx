@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
-    <datafiles number="3" name="Sprites">
+  <datafiles number="4" name="datafiles">
+    <datafiles number="4" name="Sprites">
       <datafile>
         <name>obj_spiker.png</name>
         <exists>-1</exists>
@@ -23,7 +23,7 @@
         <filename>obj_spiker.png</filename>
       </datafile>
     </datafiles>
-    <datafiles number="3" name="Terrain">
+    <datafiles number="4" name="Terrain">
       <datafile>
         <name>spr_missingtex.png</name>
         <exists>-1</exists>
@@ -40,6 +40,25 @@
           </Config>
         </ConfigOptions>
         <filename>spr_missingtex.png</filename>
+      </datafile>
+    </datafiles>
+    <datafiles number="4" name="Decals">
+      <datafile>
+        <name>dcl_missingtex.png</name>
+        <exists>-1</exists>
+        <size>161</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>dcl_missingtex.png</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -68,13 +87,13 @@
     <script>scripts\export_lvl.gml</script>
     <script>scripts\setup_sprites.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <fonts name="fonts">
     <font>fonts\fon_default</font>
   </fonts>
   <objects name="objects">
     <objects name="Decals">
-      <object>objects\obj_bgdecal</object>
-      <object>objects\obj_fgdecal</object>
+      <object>objects\obj_decal</object>
     </objects>
     <objects name="Object">
       <object>objects\obj_gameobject</object>
@@ -88,6 +107,7 @@
       <object>objects\obj_placeterrain</object>
       <object>objects\obj_uisidebar</object>
       <object>objects\obj_placeobject</object>
+      <object>objects\obj_placedecal</object>
     </objects>
     <object>objects\obj_levelentry</object>
     <object>objects\obj_control</object>

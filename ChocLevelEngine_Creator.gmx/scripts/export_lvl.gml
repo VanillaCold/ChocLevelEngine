@@ -12,8 +12,8 @@ var fgsurf = surface_create(room_width,room_height)
 surface_set_target(bgsurf)
 
 //BG decals
-export_lvl_surf(obj_bgdecal)
-surface_save(bgsurf,working_directory+string("Exports\")+string(lvl)+string("_background.png"))
+export_lvl_surf(obj_decal)
+surface_save(bgsurf,working_directory+string("Exports\")+string(lvl)+string("_decals.png"))
 surface_free(bgsurf)
 
 //Terrain
@@ -24,11 +24,11 @@ surface_save(terrainsurf,working_directory+string("Exports\")+string(lvl)+string
 surface_free(terrainsurf)
 
 //BG terrain
-surface_set_target(fgsurf)
+//surface_set_target(fgsurf)
 
-export_lvl_surf(obj_fgdecal)
-surface_save(fgsurf,working_directory+string("Exports\")+string(lvl)+string("_foreground.png"))
-surface_free(fgsurf)
+//export_lvl_surf(obj_fgdecal)
+//surface_save(fgsurf,working_directory+string("Exports\")+string(lvl)+string("_foreground.png"))
+//surface_free(fgsurf)
 
 
 #define export_lvl_surf

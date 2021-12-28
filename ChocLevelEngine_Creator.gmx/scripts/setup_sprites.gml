@@ -79,3 +79,42 @@ for(var i = 0;file != "";i++)
     file = file_find_next()
     show_debug_message(i)
     }
+#define setup_decals
+///setup_sprites()
+
+var file = file_find_first("Decals\*.png",0);
+for(var j = 0;file!="";j++)
+    {
+    file = file_find_next()
+    }
+    
+global.decal_array = array_create(j)
+global.decal_names = array_create(j)
+global.decal_num = j
+
+
+file = file_find_first("Decals\*.png",0); 
+for(var i = 0;file != "";i++)
+    {
+    show_debug_message(file)
+    spr = sprite_add("Decals\"+string(file),1,0,0,0,0)
+    width = sprite_get_width(spr)
+    height = sprite_get_height(spr)
+    sprite_delete(spr)
+    spr2 = sprite_add("Decals\"+string(file),1,0,0,width/2,height/2)
+    
+    
+    show_debug_message(spr2)
+    
+    if sprite_exists(spr2)
+    {
+    global.decal_array[i] = spr2
+    global.decal_names[i] = file
+    sprite_collision_mask(spr2,0,1,0,0,width,height,1,0)
+    
+    }
+    else show_error("
+    Decals could not be registered properly.",1)
+    
+    file = file_find_next()
+    }
